@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  api: 'https://helmibaharin.github.io/helmi22.github.io/index.html:5000'
+  api: 'https://localhost:5000'
 };
 
 /*

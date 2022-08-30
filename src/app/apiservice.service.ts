@@ -12,7 +12,7 @@ export class ApiserviceService {
 
   // connect to app.js
 
-  apiUrl = environment.api +'/top_website';
+  apiUrl = 'http://localhost:5000/top_website';
 
 
   //get all data
