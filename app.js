@@ -14,9 +14,9 @@ app.listen(5000,()=>{
     console.log('server running on PORT 5000');
 });
 
-app.use(express.static('./docs'));
+app.use(express.static('./dist/top-visited-website'));
 app.get('./*',(req,res)=>
-    res.sendFile('index.html',{root:'docs'})
+    res.sendFile('index.html',{root:'dist/top-visited-website'})
 );
 
 //MOngoDB
