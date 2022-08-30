@@ -9,6 +9,7 @@ const app = express();
 
 app.use(cors());
 app.use(bodyParser.json());
+app.use("/static", express.static('./static/'));
 
 app.listen(5000,()=>{
     console.log('server running');
