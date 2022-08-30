@@ -14,11 +14,6 @@ app.listen(5000,()=>{
     console.log('server running on PORT 5000');
 });
 
-app.use(express.static('./docs'));
-app.get('./*',(req,res)=>
-    res.sendFile('index.html',{root:'docs'})
-);
-
 //MOngoDB
 
 const uri = 'mongodb+srv://helmi2297:hellmi229722@cluster0.rhmbpim.mongodb.net/topwebsite';
