@@ -4,7 +4,6 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const mysql = require('mysql');
 
-
 const app = express();
 
 
@@ -12,7 +11,7 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use("/static", express.static('./static/'));
 
-app.listen(5000,()=>{
+app.listen(process.env.PORT || 5000,()=>{
     console.log('server running');
 });
 
@@ -32,6 +31,8 @@ const db = mysql.createConnection({
 db.connect(err=>{
     if (err){console.log(err, 'dberr');
     console.log('database not connected..');}
+    else 
+    console.log('database connecte')
 })
 
 // GET DATA
