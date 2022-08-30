@@ -12,7 +12,7 @@ export class ApiserviceService {
 
   // connect to app.js
 
-  apiUrl = environment.api +'/top_website';
+  apiUrl = 'https://topwebsitehelmi.herokuapp.com/top_website';
 
 
   //get all data
