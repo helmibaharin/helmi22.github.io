@@ -1,0 +1,100 @@
+header{
+    padding:10px 0;
+    background-color: rgb(212, 84, 84) ;
+    min-width: 375px;
+}
+.menu{
+    margin-top: 10px;
+    z-index: 1;
+}
+.menu ul{
+    padding:  0;
+    margin: 0;
+}
+.menu ul li{
+    min-width: 55px;
+    list-style-type: none;
+    display: inline-block;
+    font-size: 16px;
+    
+
+}
+.menu a:hover{
+    background-color: rgb(231, 186, 186) ;
+    color: rgb(138, 26, 26);
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+}
+.menu a{
+    text-align:center;
+    color: white;
+    text-decoration: none;
+    border: 1px solid rgb(236, 150, 150);
+    border-radius: 6px;
+    margin-left: 20px;
+}
+.menu a.active{
+    background-color: rgb(231, 186, 186) ;
+    color: rgb(138, 26, 26);
+    border: 1px solid rgb(236, 150, 150);
+    border-radius: 6px;
+}
+ .logo img{
+    height: 35px;
+    width:40px;
+}
+.logo img:hover{
+    cursor: pointer;
+}
+@media only screen and (max-width: 700px) {
+    .menu{
+        position: fixed;
+        right: -280px;
+        top: 46px;
+        width: 280px;
+        height: 100%;
+        background-color:  rgb(212, 84, 84) ;
+        transition: 0.4s ease-in-out;
+        border-top: 1px solid rgb(236, 150, 150);
+    }
+    .menu ul li{
+        display: block;
+        text-align: left;
+        margin: 0;
+        padding: 10px 0 10px 20px;
+        border-bottom: 1px solid rgb(236, 150, 150); 
+        border-radius: 0px;
+    }
+    .menu-icon{
+        display: inline-block;
+        position: relative;
+        right: 10px;
+        top: 9px;
+        padding-bottom: 10px;
+
+    }
+    .menu-icon span{
+        width: 32px;
+        height: 3px;
+        background: white;
+        display: block;
+        transition: 0.2s ease-in-out;
+    }
+    .menu-icon span:nth-child(2){
+        margin: 4px 0;
+    }
+    .menuClass{
+        right: 0px;
+        transition: 0.4s ease-in-out;
+    }
+    .menu-icon_Class span:nth-child(2){
+        display: none;
+    }
+    .menu-icon_Class span:nth-child(1){
+        transform: rotate(40deg);
+    }
+    .menu-icon_Class span:nth-child(3){
+        transform: rotate(-40deg);
+        margin-top: -3px;
+    }
+  }        

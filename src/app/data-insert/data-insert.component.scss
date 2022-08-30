@@ -1,0 +1,241 @@
+*,
+*::before,
+*::after {
+    box-sizing:border-box;
+    margin: 0;
+    padding: 0;
+}
+button {
+    padding: 2px 2px 2px 2px;
+    margin: 2px;
+    width:50px;
+}
+
+.form {
+    box-shadow: 0 2px 2px rgb(128, 124, 124);
+    padding: 10px 20px 10px  20px ;
+    width: 35%;
+    float: left;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: left;
+    gap: 30px;
+    flex-direction: column;
+    background-color: #ce583b;
+}
+.inputBox{
+    position: relative;
+    width:250;
+}
+.inputBox input{
+   width: 100%;
+   padding: 10px;
+   border : 1px solid #f0baa5;
+   border-radius: 5px;
+   background-color: #ffd9ca;
+   outline: none;
+   font-size: 1em;
+}
+.inputBox span{
+    position: absolute;
+    left: 0;
+    padding: 10px;
+    pointer-events: none;
+    font-size: 1 em;
+    color: #d8350d;
+    text-transform: uppercase;
+    transition: 0.5s;
+}
+.inputBox input:valid ~ span,
+.inputBox input:focus ~ span
+{
+    color: #7e0000;
+    transform: translateX(10px) translateY(-7px);
+    font-size: 0.65em;
+
+}
+
+.data {
+    box-shadow: 2px 2px 2px 2px rgb(128, 124, 124);
+    padding: 10px 20px 10px  20px ;
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    margin-left: 20px;
+    overflow-y: auto;
+    overflow-x: auto;
+    max-height: 460px;
+}
+
+.tabledata{
+    font-family: Mukta,sans-serif;
+    font-size: 0.9rem;
+    padding: 10px 10px 10px  10px ;
+    margin: 0;
+}
+
+table {
+    
+    background-color: white;
+
+    thead{
+        box-shadow: 0 2px 2px rgb(128, 124, 124);
+    }
+
+    th{
+        padding: 1rem 2rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1rem;
+        font-size:0.7rem;
+        font-weight:900;
+    }
+    td{
+        padding:1rem 2rem;
+    }
+    a{
+        text-decoration: none;
+        color: black;
+    }
+
+    .status{
+        border-radius: 2px;
+        background-color: red;
+        padding: 0.2rem 1rem;
+        text-align: center;
+
+        &-gold{
+            background-color: rgb(218,165,32);
+        }
+        &-silver{
+            background-color: #BCC6CC;
+        }
+        &-bronze{
+            background-color: #CD7F32;
+        }
+        &-last{
+            background-color: #5c442b;
+        }
+    }
+}
+
+.boxPopOut{
+    text-align: center;
+}
+.buttonPopOut{
+    font-size: 1em;
+    padding: 10px 30px;
+    color: rgb(8, 1, 1);
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+    background: #4ECDC4;
+    border-radius: 50px;
+}
+.overlayPopOut{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+}
+.overlayPopOut:target{
+    visibility: visible;
+    opacity: 1;
+}
+.wrapperPopOut{
+    margin:70px auto;
+    padding: 20px;
+    background: #e7e7e7;
+    border-radius: 5px; 
+    width: 400px;
+    position: relative;
+    transition: all 5s ease-in-out;
+}
+.wrapperPopOut h2{
+    margin-top: 0;
+    color: #333;
+}
+.wrapperPopOut .closePopOut{
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+}
+.wrapperPopOut .contentPopOut{
+    max-height: 30%;
+    overflow: auto;
+}
+.containerPopOut{
+    border-radius: 5px;
+    background-color: #e7e7e7;
+    padding: 20px 0;
+
+form label{
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 3px;
+}
+input[type=text], textarea{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+
+    
+}
+input[type=date]{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+
+    
+}
+input[type="submit"]{
+    background-color: #4ECDC4;
+    color: rgb(8, 1, 1);
+    padding: 15px 50px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+}
+
+@media only screen and (max-width: 1000px) {
+    .form {
+        width: 100%;
+        margin: 20px;
+        
+    }
+    .data {
+        width: 100%;
+        margin: 20px;
+    }
+
+    .tabledata{
+        margin-right: 40px;
+        
+    }
+    
+  }        
+

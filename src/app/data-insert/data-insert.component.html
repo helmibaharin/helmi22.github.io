@@ -1,0 +1,87 @@
+
+<section class="tabledata">
+
+<!--error mesage-->
+<div *ngIf="errormsg" class="alert alert-warning alert-dismissable fade show" role="alert">
+    <strong>{{ errormsg }}</strong>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" ></button>
+</div>
+
+
+<form [formGroup]="websiteForm" (ngSubmit)="websiteSubmit()">
+<div class="form">
+    <div class="inputBox">
+        <input type="date" formControlName="date">
+        <span>Date</span>
+    </div>
+    <div class="inputBox">
+        <input type="text" formControlName="name">
+        <span>Website Name</span>
+    </div>
+    <div class="inputBox">
+        <input type="text" formControlName="icon">
+        <span>Icon</span>
+    </div>
+    <div class="inputBox">
+        <input type="text" formControlName="link">
+        <span>Website</span>
+    </div>
+    <div class="inputBox">
+        <input type="text" formControlName="visitor">
+        <span>Visitor</span>
+    </div>
+    <div class="inputBox"> 
+        <input type="submit">
+    </div>
+</div>
+</form>
+<div class="data">
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Icon</th>
+                <th>Website</th>
+                <th>Visitors</th>
+                <th>Edit</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor = 'let us of readData'>
+                <td>{{ us.date }}</td>
+                <td>{{ us.icon }}</td>
+                <td><a href="{{ us.link }}">{{ us.link }}</a></td>
+                <td>{{ us.visitor }}</td>
+                <td>
+                    <a href="/data/{{ us.id }}#divOne"><button class="btn btn-sm btn-primary">Edit</button></a>
+                    <button (click)="deleteID(us.id)" class="btn btn-sm btn-danger">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+</section>
+
+    <!-- POPOUT --> 
+    <div class="overlayPopOut" id="divOne">
+        <div class="wrapperPopOut">
+          <a href="data#" class="closePopOut">&times;</a><br><br>
+          <div class="contentPopOut">
+              <div class="containerPopOut">
+                <form [formGroup]="updateForm">
+                
+                    <label>Name</label>
+                <input formControlName="name" type="text" />
+                  <label>Date</label>
+                <input formControlName="date" type="date" />
+                  <label>Visitor</label>
+                <input formControlName="visitor" type="text" />
+                <input type="submit" (click)="userUpdate()">
+
+                </form>
+              </div>
+          </div>
+        </div>
+      </div>
+<!-- /POPOUT -->

@@ -1,0 +1,29 @@
+<header>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 col-sm-3 col-3">
+        <div class="logo">
+          <img src="assets/logo2.png" alt="Logo">
+        </div>
+      </div>
+      <div class="col-md-9 col-sm-9 col-9 text-end">
+        <div class="menu-icon" [class.menu-icon_Class]="menu_icon_variable" (click)="openMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="menu" [class.menuClass]="menuVariable">
+          <ul>
+            <a routerLink="/table" routerLinkActive="active"><li>Top 5</li></a>
+            <a routerLink="/alltime" routerLinkActive="active"><li>All Time</li></a>
+            <a routerLink="/pie" routerLinkActive="active"><li>Pie</li></a>
+            <a routerLink="/bar" routerLinkActive="active"><li>Bar</li></a>
+            <a routerLink="/data" routerLinkActive="active"><li>Data</li></a>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<router-outlet></router-outlet>
