@@ -53,7 +53,7 @@
                 <td><a href="{{ us.link }}">{{ us.link }}</a></td>
                 <td>{{ us.visitor }}</td>
                 <td>
-                    <a href="/data/{{ us.id }}#divOne"><button class="btn btn-sm btn-primary">Edit</button></a>
+                    <a routerLink="/data/{{ us.id }}"><button class="btn btn-sm btn-primary">Edit</button></a>
                     <button (click)="deleteID(us.id)" class="btn btn-sm btn-danger">Delete</button>
                 </td>
             </tr>
@@ -64,7 +64,7 @@
 </section>
 
     <!-- POPOUT --> 
-    <div class="overlayPopOut" id="divOne">
+    <div class="overlayPopOut" *ngIf = "getparamid" >
         <div class="wrapperPopOut">
           <a href="data#" class="closePopOut">&times;</a><br><br>
           <div class="contentPopOut">
