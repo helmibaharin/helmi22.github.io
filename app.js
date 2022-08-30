@@ -1,37 +1,54 @@
 const express = require('express');
+const mongoose = require('mongoose')
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const mysql = require('mysql');
 
-
 const app = express();
-
 
 app.use(cors());
 app.use(bodyParser.json());
 app.use("/static", express.static('./static/'));
 
 app.listen(5000,()=>{
-    console.log('server running');
+    console.log('server running on PORT 5000');
 });
+
+app.use(express.static('./docs'));
+app.get('./*',(req,res)=>
+    res.sendFile('index.html',{root:'docs'})
+);
+
+//MOngoDB
+
+const uri = 'mongodb+srv://helmi2297:hellmi229722@cluster0.rhmbpim.mongodb.net/topwebsite';
+async function connect(){
+    try{
+        await mongoose.connect(uri);
+        console.log("connected to MongoDB");
+    } catch (error){
+        console.error(error);
+    }
+}
+connect();
 
 //MySQL
 
 
-const db = mysql.createConnection({
-    host        : 'localhost',
-    user        : 'root',
-    password    : '',
-    database    : 'topwebsite',
-    port        :3306
-});
+//const db = mysql.createConnection({
+    //host        : 'localhost',
+    //user        : 'root',
+   // password    : '',
+   // database    : 'topwebsite',
+   // port        :3306
+//});
 
 // check mysql connection
 
-db.connect(err=>{
-    if (err){console.log(err, 'dberr');
-    console.log('database not connected..');}
-})
+//db.connect(err=>{
+   // if (err){console.log(err, 'dberr');
+    //console.log('database not connected..');}
+//})
 
 // GET DATA
 
