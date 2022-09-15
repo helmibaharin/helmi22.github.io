@@ -9,7 +9,7 @@ import  {ApiserviceService} from './apiservice.service';
 
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 import { AllTimeComponent } from './all-time/all-time.component';
-import { LocationStrategy, PathLocationStrategy } from '@angular/common';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
 
 
@@ -26,7 +26,7 @@ import { LocationStrategy, PathLocationStrategy } from '@angular/common';
     ReactiveFormsModule,
     FormsModule
   ],
-  providers: [ApiserviceService , { provide: LocationStrategy, useClass: PathLocationStrategy }],
+  providers: [ApiserviceService , { provide: LocationStrategy, useClass: HashLocationStrategy }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

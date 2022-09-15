@@ -7,12 +7,14 @@ import { DataInsertComponent } from './data-insert/data-insert.component';
 import { AllTimeComponent } from './all-time/all-time.component';
 
 const routes: Routes = [
+  {path: '' , component: TableDisplayComponent},
   {path: 'table' , component: TableDisplayComponent},
   {path: 'bar' , component: BarDisplayComponent},
   {path: 'pie' , component: PieDisplayComponent},
   {path: 'data' , component: DataInsertComponent},
   {path: 'alltime' , component: AllTimeComponent},
-  {path: 'data/:id' , component: DataInsertComponent}
+  {path: 'data/:id' , component: DataInsertComponent},
+  {path: 'table/:id' , component: TableDisplayComponent}
 ];
 
 @NgModule({

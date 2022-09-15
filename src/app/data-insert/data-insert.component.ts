@@ -61,7 +61,7 @@ export class DataInsertComponent implements OnInit {
     if(this.updateForm.valid){
         this.service.UpdateData(this.updateForm.value,this.getparamid).subscribe((res)=>{
           console.log(res,'resupdated');
-          window.location.href="data#";
+          window.location.href="index.html/data";
         });
     }else{
         this.errormsg = 'all field is requreied';

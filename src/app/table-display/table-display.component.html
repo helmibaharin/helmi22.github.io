@@ -22,4 +22,56 @@
         </tr>
     </tbody>
 </table>
+</section><br/><br/>
+
+<section class="tabledata">
+
+<div class="data">
+    <table>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Icon</th>
+                <th>Website</th>
+                <th>Visitors</th>
+                <th>Edit</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor = 'let us of readData'>
+                <td>{{ us.date }}</td>
+                <td>{{ us.icon }}</td>
+                <td><a href="{{ us.link }}">{{ us.link }}</a></td>
+                <td>{{ us.visitor }}</td>
+                <td>
+                    <a routerLink="/table/{{ us.id }}"><button class="btn btn-sm btn-primary">Edit</button></a>
+                    <button (click)="deleteID(us.id)" class="btn btn-sm btn-danger">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
 </section>
+
+    <!-- POPOUT --> 
+    <div class="overlayPopOut" *ngIf = "getparamid" >
+        <div class="wrapperPopOut">
+          <a routerLink="/table/" class="closePopOut">&times;</a><br><br>
+          <div class="contentPopOut">
+              <div class="containerPopOut">
+                <form [formGroup]="updateForm">
+                
+                    <label>Name</label>
+                <input formControlName="name" type="text" />
+                  <label>Date</label>
+                <input formControlName="date" type="date" />
+                  <label>Visitor</label>
+                <input formControlName="visitor" type="text" />
+                <input type="submit" (click)="userUpdate()">
+
+                </form>
+              </div>
+          </div>
+        </div>
+      </div>
